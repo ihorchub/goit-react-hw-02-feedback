@@ -10,37 +10,11 @@ export class App extends Component {
     bad: 0,
   };
 
-  // addRespond = e => {
-  //   const selectedOption = e.target.name;
-
-  //   if (selectedOption === 'good') {
-  //     this.setState(prevState => ({ good: prevState.good + 1 }));
-  //   } else if (selectedOption === 'neutral') {
-  //     this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-  //   } else if (selectedOption === 'bad') {
-  //     this.setState(prevState => ({ bad: prevState.bad + 1 }));
-  //   }
-  // };
-
   addRespond = e => {
-    const selectedOption = e.target.name;
-
-    switch (selectedOption) {
-      case 'good':
-        this.setState(prevState => ({ good: prevState.good + 1 }));
-        break;
-
-      case 'neutral':
-        this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-        break;
-
-      case 'bad':
-        this.setState(prevState => ({ bad: prevState.bad + 1 }));
-        break;
-
-      default:
-        console.log('Something went wrong');
-    }
+    const { name } = e.target;
+    this.setState(prevState => {
+      return { [name]: prevState[name] + 1 };
+    });
   };
 
   countTotalFeedback = () => {
