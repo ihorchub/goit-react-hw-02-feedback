@@ -8,24 +8,22 @@ export const Statistics = ({
   bad,
   total,
   positivePercentage,
-}) => {
-  return (
-    <div>
-      <h2>Statistics</h2>
-      {good !== 0 || neutral !== 0 || bad !== 0 ? (
-        <StatisticsBody
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positivePercentage={positivePercentage}
-        />
-      ) : (
-        <NotificationMessage />
-      )}
-    </div>
-  );
-};
+}) => (
+  <div>
+    <h2>Statistics</h2>
+    {good !== 0 || neutral !== 0 || bad !== 0 ? (
+      <StatisticsBody
+        good={good}
+        neutral={neutral}
+        bad={bad}
+        total={total}
+        positivePercentage={positivePercentage}
+      />
+    ) : (
+      <NotificationMessage />
+    )}
+  </div>
+);
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,

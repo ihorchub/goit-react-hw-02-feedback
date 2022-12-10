@@ -10,6 +10,8 @@ export class App extends Component {
     bad: 0,
   };
 
+  getOptions = () => Object.keys(this.state);
+
   addRespond = e => {
     const { name } = e.target;
     this.setState(prevState => {
@@ -38,7 +40,10 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
     return (
       <SectionTitle>
-        <FeedbackOptions onLeaveFeedback={this.addRespond} />
+        <FeedbackOptions
+          options={this.getOptions()}
+          onLeaveFeedback={this.addRespond}
+        />
         <Statistics
           good={good}
           neutral={neutral}

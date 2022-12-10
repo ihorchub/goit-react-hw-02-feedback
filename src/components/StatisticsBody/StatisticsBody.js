@@ -6,17 +6,15 @@ export const StatisticsBody = ({
   bad,
   total,
   positivePercentage,
-}) => {
-  return (
-    <div>
-      <p>Goog: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>Total: {total}</p>
-      <p>Positive feedback: {positivePercentage}%</p>
-    </div>
-  );
-};
+}) => (
+  <div>
+    <p>Goog: {good}</p>
+    <p>Neutral: {neutral}</p>
+    <p>Bad: {bad}</p>
+    <p>Total: {total}</p>
+    <p>Positive feedback: {positivePercentage}%</p>
+  </div>
+);
 
 StatisticsBody.propTypes = {
   good: PropTypes.number.isRequired,
