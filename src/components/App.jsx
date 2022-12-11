@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { SectionTitle } from 'components/SectionTitle/SectionTitle';
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
 import { Statistics } from 'components/Statistics/Statistics';
+import { GlobalStyle } from './GlobalStyles';
 
 export class App extends Component {
   state = {
@@ -51,6 +52,7 @@ export class App extends Component {
           total={this.countTotalFeedback()}
           positivePercentage={this.countPositiveFeedbackPercentage()}
         />
+        <GlobalStyle />
       </SectionTitle>
     );
   }
