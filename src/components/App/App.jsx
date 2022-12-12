@@ -40,20 +40,22 @@ export class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     return (
-      <SectionTitle>
-        <FeedbackOptions
-          options={this.getOptions()}
-          onLeaveFeedback={this.addRespond}
-        />
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-        />
+      <>
+        <SectionTitle>
+          <FeedbackOptions
+            options={this.getOptions()}
+            onLeaveFeedback={this.addRespond}
+          />
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </SectionTitle>
         <GlobalStyle />
-      </SectionTitle>
+      </>
     );
   }
 }

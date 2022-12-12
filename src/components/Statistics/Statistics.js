@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { NotificationMessage } from 'components/NotificationMessage/NotificationMessage';
 import { StatisticsBody } from 'components/StatisticsBody/StatisticsBody';
+import { StatWrapper, Title } from './Statistics.styled';
 
 export const Statistics = ({
   good,
@@ -9,8 +10,8 @@ export const Statistics = ({
   total,
   positivePercentage,
 }) => (
-  <div>
-    <h2>Statistics</h2>
+  <StatWrapper>
+    <Title>Statistics</Title>
     {good !== 0 || neutral !== 0 || bad !== 0 ? (
       <StatisticsBody
         good={good}
@@ -22,7 +23,7 @@ export const Statistics = ({
     ) : (
       <NotificationMessage />
     )}
-  </div>
+  </StatWrapper>
 );
 
 Statistics.propTypes = {
